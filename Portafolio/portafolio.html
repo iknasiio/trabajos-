@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mi Portafolio</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+        <style>
+            /* Estilos para el formulario de contacto */
+            .contact-form-container {
+                background-color: #f8f9fa;
+                border-radius: 8px;
+                padding: 25px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                margin-top: 20px;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .contact-form-container h2 {
+                color: #2c3e50;
+                margin-bottom: 20px;
+                text-align: center;
+                font-size: 1.8rem;
+            }
+            
+            .form-group {
+                margin-bottom: 20px;
+            }
+            
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 600;
+                color: #34495e;
+            }
+            
+            .form-group input, .form-group textarea {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                font-size: 16px;
+                transition: border-color 0.3s;
+            }
+            
+            .form-group input:focus, .form-group textarea:focus {
+                border-color: #3498db;
+                outline: none;
+                box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+            }
+            
+            .form-group textarea {
+                resize: vertical;
+                min-height: 120px;
+            }
+            
+            .submit-btn {
+                background-color: #3498db;
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 6px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                display: block;
+                width: 100%;
+                transition: background-color 0.3s;
+            }
+            
+            .submit-btn:hover {
+                background-color: #2980b9;
+            }
+            
+            #mensajeResultado {
+                margin-top: 15px;
+                padding: 10px;
+                border-radius: 4px;
+                text-align: center;
+                font-weight: 500;
+            }
+            
+            .success-message {
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
+            }
+            
+            .error-message {
+                background-color: #f8d7da;
+                color: #721c24;
+                border: 1px solid #f5c6cb;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Marcelo Ignacio Arias Lagos</h1>
+            <nav>
+                <ul>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="main-container">
+            <main>
+                <section id="sobre-mi" class="profile-section">
+                    <div class="profile-content">
+                        <img src="img/fotoperfilignacio.jpeg" alt="Foto de perfil" class="profile-image">
+                        <div class="profile-text">
+                            <h2>Sobre Mí</h2>
+                            <p>Hola, mi nombre es "Marcelo" y soy estudiante universitario de Informática. Actualmente, estoy aprendiendo HTML, ya que me apasiona el mundo de la tecnología y el desarrollo web. Además de mis estudios, me gusta mucho jugar al fútbol, es uno de mis pasatiempos favoritos. Disfruto pasar tiempo con mis amigos, conocer nuevas cosas y siempre estoy en busca de mejorar mis habilidades tanto en el ámbito académico como en mis hobbies.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="proyectos" class="projects-section">
+                    <h2>Mis Proyectos</h2>
+                    <div class="projects-grid">
+                        <article class="project-card">
+                            <img src="img/logoproyects.png" alt="Proyecto 1">
+                            <h3>Landing page con formulario JS</h3>
+                            <p>Ejercicio el cual refuerza el uso de estructuras HTML, estilos con CSS y manipulación del DOM con JavaScript, además de buenas prácticas en accesibilidad y responsividad.</p>
+                            <a href="taller2.html" class="project-link">Ver más detalles</a>
+                        </article>
+                        <article class="project-card">
+                            <img src="img/logoproyects.png" alt="Proyecto 2">
+                            <h3>Casos prácticos manipulación del DOM, aplicados a landing page.</h3>
+                            <p>Ejercicio donde se trabaja ejemplos de maniculacion del DOM.</p>
+                            <a href="presentacion2.html" class="project-link">Ver más detalles</a>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <aside class="skills-sidebar">
+                <h2>Mis Habilidades</h2>
+                <ul class="skills-list">
+                    <li>Aprendizaje Rápido</li>
+                    <li>Responsabilidad</li>
+                    <li>HTML</li>
+                    <li>Puntualidad</li>
+                </ul>
+            </aside>
+        </div>
+
+        <footer>
+            <section id="contacto" class="contact-section">
+                <h2>Contacto</h2>
+                <div class="contact-grid">
+                    <div class="contact-method">
+                        <h3>Redes Sociales</h3>
+                        <ul class="social-contact">
+                            <li>
+                                <a href="https://www.instagram.com/i191106" target="_blank" aria-label="Instagram">
+                                    <img src="img/Instagram_icon.png" alt="Instagram" class="social-icon">
+                                    Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/tu_usuario" target="_blank" aria-label="Facebook">
+                                    <img src="img/logotipo-de-facebook-con-archivo-pasos-vectoriales-color-cuadrado-coloreado-fácil-editar-y-fondo-blanco-alta-resolución-255557233.webp" alt="Facebook" class="social-icon">
+                                    Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/tu_usuario" target="_blank" aria-label="Twitter">
+                                    <img src="img/Twitter_new_X_logo.png" alt="Twitter" class="social-icon">
+                                    Twitter
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contact-method">
+                        <h3>Contactate con Marcelo</h3>
+                        <div>
+                            <img src="img/logouct_blanco.png" style="width: 150px; height: auto; margin: 10px auto; display: block;">
+                        </div>
+                    
+                        <p id="mensajeResultado"></p>
+                    
+                        <div class="contact-form-container">
+                            <h2>Formulario de Contacto</h2>
+                            <form id="formularioContacto">
+                                <div class="form-group">
+                                    <label for="email">Correo electrónico:</label>
+                                    <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                                </div>
+                        
+                                <div class="form-group">
+                                    <label for="mensaje">Mensaje:</label>
+                                    <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                                </div>
+                        
+                                <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                            </form>
+                        </div>
+                    
+                        <script>
+                            const formulario = document.getElementById("formularioContacto");
+                            const mensajeResultado = document.getElementById("mensajeResultado");
+                    
+                            formulario.addEventListener("submit", function(event) {
+                                event.preventDefault();
+                    
+                                const email = document.getElementById("email").value;
+                                const mensaje = document.getElementById("mensaje").value;
+                    
+                                if (!email || !mensaje) {
+                                    mensajeResultado.innerHTML = "Por favor, completa todos los campos.";
+                                    mensajeResultado.className = "error-message";
+                                    return;
+                                }
+                    
+                                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                if (!emailRegex.test(email)) {
+                                    mensajeResultado.innerHTML = "Por favor, ingresa un correo electrónico válido (debe contener '@' y no debe tener espacios).";
+                                    mensajeResultado.className = "error-message";
+                                    return;
+                                }
+                    
+                                if (mensaje.trim() === "") {
+                                    mensajeResultado.innerHTML = "Por favor, ingresa un mensaje válido.";
+                                    mensajeResultado.className = "error-message";
+                                    return;
+                                }
+                    
+                                mensajeResultado.innerHTML = `¡Gracias por tu mensaje! Hemos recibido tu correo y ya me pondre en contacto contigo.: ${email}.`;
+                                mensajeResultado.className = "success-message";
+                                
+                                formulario.reset();
+                            });
+                        </script>
+                    </div>
+                </div>
+            </section>
+            <p class="copyright">&copy; 2025 Marcelo Ignacio Arias Lagos. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+</html>

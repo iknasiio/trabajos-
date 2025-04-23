@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarceloAriasweb</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para taller2.html */
+        .presentacion {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        
+        .presentacion img {
+            max-width: 200px;
+            margin-bottom: 1rem;
+        }
+        
+        .formularioseccion {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        label {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        input, textarea {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        textarea {
+            height: 150px;
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .mensajeerror {
+            color: #e74c3c;
+            font-size: 0.8rem;
+        }
+        
+        .mensajeexito {
+            color: #2ecc71;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+        }
+        
+        #estilo1 {
+            transition: color 0.3s ease;
+        }
+        
+        .estilo2 {
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+        
+        #btnIncrementar {
+            margin: 1rem 0;
+        }
+        
+        #contador {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        /* Estilo para el botón de volver */
+        .volver-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .volver-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .volver-container {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">MarceloAriasweb</div>
+        <nav>
+            <ul>
+                <li><a href="#Inicio">Inicio</a></li>
+                <li><a href="#Contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección principal -->
+    <section id="Inicio" class="presentacion">
+        <img src="img/logouct_blanco.png" alt="Imagen principal">
+        <div class="textopresentacion">
+            <h1>Bienvenido a MarceloAriasweb</h1>
+            <p>Contáctame para mayor información.</p>
+        </div>
+    </section>
+
+    <!-- Formulario de contacto -->
+    <section id="Contacto" class="formularioseccion">
+        <h2>Contacto</h2>
+        <form id="formulario">
+            <label for="Nombre">Nombre:</label>
+            <input type="text" id="Nombre" name="Nombre" required>
+            <span id="errorNombre" class="mensajeerror"></span>
+
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" required>
+            <span id="errorEmail" class="mensajeerror"></span>
+
+            <label for="Mensaje">Mensaje:</label>
+            <textarea id="Mensaje" name="Mensaje" required></textarea>
+            <span id="errorMensaje" class="mensajeerror"></span>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="mensajeexito" class="mensajeexito"></p>
+    </section>
+
+    <!-- Botón para volver al portafolio -->
+    <div class="volver-container">
+        <a href="portafolio.html" class="volver-btn">← Volver al Portafolio</a>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2025 MarceloAriasweb</p>
+    </footer>
+
+    <script>
+        // Cambio de color al pasar el mouse sobre el párrafo con id "estilo1"
+        document.getElementById("estilo1").addEventListener("mouseover", porencima);
+        document.getElementById("estilo1").addEventListener("mouseout", alquitar);
+
+        function porencima() {
+            document.getElementById("estilo1").style.color = "brown";
+        }
+
+        function alquitar() {
+            document.getElementById("estilo1").style.color = "black";
+        }
+    </script>
+
+    <script>
+        const elementos = document.querySelectorAll('.estilo2');
+
+        // Función para cambiar el color del texto de los párrafos con clase 'estilo2'
+        function cambiarColor() {
+            // Cambiar el color del texto a 'lightblue' para el párrafo que se hace clic
+            this.style.color = 'lightblue';  // "this" hace referencia al párrafo clickeado
+        }
+
+        // Añadimos el evento de clic a todos los párrafos con la clase 'estilo2'
+        elementos.forEach(function(elemento) {
+            elemento.addEventListener('click', cambiarColor);
+        });
+    </script>
+
+    <script>
+        // Seleccionamos todos los párrafos con la etiqueta <p>
+        const parrafos = document.querySelectorAll('p');
+
+        // Función para cambiar el color del texto de los párrafos con etiqueta <p> al hacer clic derecho
+        function cambiarColorConClickDerecho(event) {
+            event.preventDefault();  // Evita que aparezca el menú contextual al hacer clic derecho
+            this.style.color = 'lightgreen';  // Cambiar el color del texto del párrafo clickeado
+        }
+
+        // Añadimos el evento de clic derecho (contextmenu) a todos los párrafos
+        parrafos.forEach(function(parrafo) {
+            parrafo.addEventListener('contextmenu', cambiarColorConClickDerecho);
+        });
+    </script>
+    
+    <script>
+        // Seleccionamos el botón y el elemento donde mostraremos el contador
+        const btnIncrementar = document.getElementById('btnIncrementar');
+        const contador = document.getElementById('contador');
+
+        // Inicializamos el contador
+        let clicks = 0;
+
+        // Función para incrementar el contador
+        function incrementarContador() {
+            clicks++;  // Incrementamos el contador
+            contador.textContent = clicks;  // Actualizamos el contenido del <span> con el valor del contador
+        }
+
+        // Añadimos el evento de clic al botón
+        btnIncrementar.addEventListener('click', incrementarContador);
+    </script>
+</body>
+</html> 

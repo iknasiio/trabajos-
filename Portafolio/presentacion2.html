@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        /* Estilo para el botón de volver */
+        .volver-btn {
+            display: inline-block;
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .volver-btn:hover {
+            background-color: #3498db;
+            transform: translateY(-2px);
+        }
+        
+        .volver-container {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        /* Estilos para los párrafos */
+        p {
+            margin-bottom: 10px;
+        }
+        
+        /* Estilos para el contador */
+        h1 {
+            margin: 20px 0;
+        }
+        
+        button {
+            padding: 8px 15px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cambio de estilo por etiqueta -->
+    <p>parrafo 1</p>
+    <p>parrafo 2</p>
+    <p>parrafo 3</p>
+
+    <!-- Cambio de estilo por id -->
+    <p id="estilo1">parrafo 4</p>
+
+    <!-- Cambio de estilo por Clase -->
+    <p class="estilo2">parrafo 5</p>
+    <p class="estilo2">parrafo 6</p>
+    <p class="estilo2">parrafo 7</p>
+    <p class="estilo2">parrafo 8</p>
+    <p class="estilo2">parrafo 9</p>
+
+    <h1>Contador de Clics</h1>
+    <!-- Muestra el contador de clics -->
+    <p>Haz clic en el botón para incrementar el contador.</p>
+    <button id="btnIncrementar">Haz clic aquí</button>
+    <p>Contador: <span id="contador">0</span></p>
+    
+    <!-- Botón para volver al portafolio -->
+    <div class="volver-container">
+        <a href="portafolio.html" class="volver-btn">← Volver al Portafolio</a>
+    </div>
+
+    <script>
+        // Cambio de color al pasar el mouse sobre el párrafo con id "estilo1"
+        document.getElementById("estilo1").addEventListener("mouseover", porencima);
+        document.getElementById("estilo1").addEventListener("mouseout", alquitar);
+
+        function porencima() {
+            document.getElementById("estilo1").style.color = "brown";
+        }
+
+        function alquitar() {
+            document.getElementById("estilo1").style.color = "black";
+        }
+    </script>
+
+    <script>
+          const elementos = document.querySelectorAll('.estilo2');
+
+// Función para cambiar el color del texto de los párrafos con clase 'estilo2'
+function cambiarColor() {
+    // Cambiar el color del texto a 'lightblue' para el párrafo que se hace clic
+    this.style.color = 'lightblue';  // "this" hace referencia al párrafo clickeado
+}
+
+// Añadimos el evento de clic a todos los párrafos con la clase 'estilo2'
+elementos.forEach(function(elemento) {
+    elemento.addEventListener('click', cambiarColor);
+});
+    </script>
+
+<script>
+    // Seleccionamos todos los párrafos con la etiqueta <p>
+    const parrafos = document.querySelectorAll('p');
+
+    // Función para cambiar el color del texto de los párrafos con etiqueta <p> al hacer clic derecho
+    function cambiarColorConClickDerecho(event) {
+        event.preventDefault();  // Evita que aparezca el menú contextual al hacer clic derecho
+        this.style.color = 'lightgreen';  // Cambiar el color del texto del párrafo clickeado
+    }
+
+    // Añadimos el evento de clic derecho (contextmenu) a todos los párrafos
+    parrafos.forEach(function(parrafo) {
+        parrafo.addEventListener('contextmenu', cambiarColorConClickDerecho);
+    });
+</script>
+<script>
+    // Seleccionamos el botón y el elemento donde mostraremos el contador
+    const btnIncrementar = document.getElementById('btnIncrementar');
+    const contador = document.getElementById('contador');
+
+    // Inicializamos el contador
+    let clicks = 0;
+
+    // Función para incrementar el contador
+    function incrementarContador() {
+        clicks++;  // Incrementamos el contador
+        contador.textContent = clicks;  // Actualizamos el contenido del <span> con el valor del contador
+    }
+
+    // Añadimos el evento de clic al botón
+    btnIncrementar.addEventListener('click', incrementarContador);
+</script>
+</body>
+</html> 
